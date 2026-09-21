@@ -1,0 +1,6 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?informationContent ?bearer WHERE {
+  ?informationContent gdpo:GDPO0000464 ?bearer .
+}
+ORDER BY ?informationContent ?bearer

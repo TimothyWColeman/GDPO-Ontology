@@ -1,0 +1,19 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+PREFIX ex: <http://example.org/gdpo-demo/>
+
+SELECT DISTINCT
+  ?evaluation ?criterion ?method ?methodDerivedPrinciple ?entailedRelevantPrinciple
+WHERE {
+  VALUES ?artifact { ex:BraunSK4_001 }
+
+  ?evaluation a gdpo:GDPO0000044 ;
+              gdpo:GDPO0000045 ?artifact ;
+              gdpo:GDPO0000046 ?criterion ;
+              gdpo:GDPO0000048 ?method .
+
+  ?method gdpo:GDPO0000054 ?methodDerivedPrinciple .
+  OPTIONAL {
+    ?evaluation gdpo:GDPO0000059 ?entailedRelevantPrinciple .
+  }
+}
+ORDER BY ?evaluation ?methodDerivedPrinciple

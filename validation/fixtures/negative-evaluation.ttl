@@ -1,0 +1,117 @@
+@prefix ex: <https://example.org/gdpo-validation/> .
+@prefix gdpo: <https://www.ramsprinciplesofgooddesign.com/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:artifact a bfo:BFO_0000001, bfo:BFO_0000040 .
+ex:other-artifact a bfo:BFO_0000001, bfo:BFO_0000040 .
+ex:interval a bfo:BFO_0000008 .
+ex:other-interval a bfo:BFO_0000008 .
+ex:agent a cco:ont00001017 .
+
+ex:missing-artifact a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000462 ex:supporting-process ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:missing-principle a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000462 ex:supporting-process ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:missing-temporal-scope a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000462 ex:supporting-process .
+
+ex:missing-producing-process a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:artifact-mismatch a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000462 ex:artifact-mismatch-process ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:artifact-mismatch-process a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:interval ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:artifact-mismatch ;
+    gdpo:GDPO0000465 ex:other-artifact .
+
+ex:temporal-region-mismatch a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000462 ex:temporal-region-mismatch-process ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:temporal-region-mismatch-process a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:other-interval ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:temporal-region-mismatch ;
+    gdpo:GDPO0000465 ex:artifact .
+
+ex:reciprocal-anchor-record a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000462 ex:reciprocal-anchor-process ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:reciprocal-anchor-process a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:interval ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:reciprocal-anchor-record ;
+    gdpo:GDPO0000465 ex:artifact .
+
+ex:missing-process-reciprocal a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000462 ex:reciprocal-anchor-process ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:missing-record-reciprocal-process a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:interval ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:reciprocal-anchor-record ;
+    gdpo:GDPO0000465 ex:artifact .
+
+ex:bad-score a gdpo:GDPO0000456 ;
+    gdpo:GDPO0000459 "not-a-decimal"^^xsd:string .
+
+ex:empty-method a gdpo:GDPO0000052 .
+
+ex:bad-process a gdpo:GDPO0000055 .
+
+ex:communication-content a bfo:BFO_0000001, gdpo:GDPO0000447 .
+
+# This explicit class assertion is intentionally invalid under the application
+# profile: honesty and communication occur on the record, but in different
+# criterion–subject assessment components.
+ex:wrong-communicative-criterion a gdpo:GDPO0000044, gdpo:GDPO0000452 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000450 ex:communication-content ;
+    gdpo:GDPO0000462 ex:supporting-process ;
+    gdpo:GDPO0000468 ex:interval ;
+    gdpo:GDPO0000469 ex:wrong-honesty-artifact-assessment,
+        ex:wrong-durability-communication-assessment .
+
+ex:wrong-honesty-artifact-assessment a gdpo:GDPO0000472 ;
+    gdpo:GDPO0000470 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000471 ex:artifact .
+
+ex:wrong-durability-communication-assessment a gdpo:GDPO0000472 ;
+    gdpo:GDPO0000470 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000471 ex:communication-content .
+
+ex:supporting-process a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:interval ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:missing-artifact,
+        ex:missing-principle,
+        ex:missing-temporal-scope,
+        ex:wrong-communicative-criterion ;
+    gdpo:GDPO0000465 ex:artifact .

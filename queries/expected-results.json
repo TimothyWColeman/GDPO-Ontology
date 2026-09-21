@@ -1,0 +1,787 @@
+{
+  "contracts": {
+    "CQ-01": {
+      "execution_kind": "schema-sparql",
+      "inference": "asserted",
+      "query": "queries/example/a2-1-target-expressions.rq",
+      "query_sha256": "d2733bf7817cfa7ba03e6c2205f41de28d5b88a7212ba60c1fa2a002a9aeec52",
+      "question": "Which target class expressions are associated with each principle?",
+      "row_count": 10,
+      "rows": [
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000020>",
+          "\"principle of innovativeness\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000004>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000021>",
+          "\"principle of usefulness\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000005>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000022>",
+          "\"principle of aesthetics\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000006>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000023>",
+          "\"principle of understandability\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000007>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000024>",
+          "\"principle of unobtrusiveness\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000008>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000025>",
+          "\"principle of honesty\"@en",
+          "_:cb1389951037213f283723db407f2fae406c14cf94782cc879d8d2354c8f6014485"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000026>",
+          "\"principle of durability\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000010>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000027>",
+          "\"principle of thoroughness\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000011>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000028>",
+          "\"principle of environmental friendliness\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000012>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000029>",
+          "\"principle of minimalism\"@en",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000013>"
+        ]
+      ],
+      "variables": [
+        "principleClass",
+        "principleLabel",
+        "targetExpression"
+      ]
+    },
+    "CQ-02": {
+      "execution_kind": "schema-sparql",
+      "inference": "asserted",
+      "query": "queries/cq02-prescribed-process-types.rq",
+      "query_sha256": "6d6d9fe1f1eb9e9c2a20b9cf2e2e809ad439a08cece2bc5bf6d4dae1c4a1264d",
+      "question": "Which process types constrain the intended prescriptions of each principle?",
+      "row_count": 11,
+      "rows": [
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000066>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000076>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000014>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000067>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000077>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000015>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000068>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000078>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000030>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000069>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000079>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000016>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000070>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000080>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000031>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000081>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000017>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000086>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000053>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000082>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000018>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000073>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000083>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000032>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000084>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000019>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000075>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000085>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000033>"
+        ]
+      ],
+      "variables": [
+        "principle",
+        "component",
+        "processType"
+      ]
+    },
+    "CQ-03": {
+      "execution_kind": "schema-sparql",
+      "inference": "asserted",
+      "query": "queries/cq03-lifecycle-applicability.rq",
+      "query_sha256": "7a507ed3841f919881543b2082bcf79c48fadf92233f4a7dd187cf588219ffb0",
+      "question": "Which lifecycle-stage process types constrain each prescription's intended applicability?",
+      "row_count": 12,
+      "rows": [
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000067>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000077>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000069>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000079>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000070>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000080>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000081>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000086>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000038>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000086>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000082>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000084>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000036>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000084>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000037>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000084>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000038>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000084>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000084>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000040>"
+        ]
+      ],
+      "variables": [
+        "principle",
+        "component",
+        "stage"
+      ]
+    },
+    "CQ-04": {
+      "execution_kind": "schema-sparql",
+      "inference": "asserted",
+      "query": "queries/cq04-specification-components.rq",
+      "query_sha256": "99377e570d56439c55fd102f628a05df1825f8c2cea151381376e4e5580ee202",
+      "question": "Which principles are included in the Rams ten principles specification?",
+      "row_count": 10,
+      "rows": [
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000066>",
+          "\"principle of innovativeness 001\"@en",
+          "\"Good design is innovative.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000067>",
+          "\"principle of usefulness 001\"@en",
+          "\"Good design makes a product useful.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000068>",
+          "\"principle of aesthetics 001\"@en",
+          "\"Good design is aesthetic.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000069>",
+          "\"principle of understandability 001\"@en",
+          "\"Good design makes a product understandable.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000070>",
+          "\"principle of unobtrusiveness 001\"@en",
+          "\"Good design is unobtrusive.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "\"principle of honesty 001\"@en",
+          "\"Good design is honest.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>",
+          "\"principle of durability 001\"@en",
+          "\"Good design is long-lasting.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000073>",
+          "\"principle of thoroughness 001\"@en",
+          "\"Good design is thorough down to the last detail.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "\"principle of environmental friendliness 001\"@en",
+          "\"Good design is environmentally friendly.\"@en"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000075>",
+          "\"principle of minimalism 001\"@en",
+          "\"Good design is as little design as possible.\"@en"
+        ]
+      ],
+      "variables": [
+        "principle",
+        "label",
+        "canonicalText"
+      ]
+    },
+    "CQ-05": {
+      "execution_kind": "schema-structural-review",
+      "inference": "asserted",
+      "query": "queries/cq05-principle-target-distinction.rq",
+      "query_sha256": "d392fd99f1e52cc12aa949a0af10df28bd99036c31da7de7d88598a127e80d75",
+      "question": "How does GDPO distinguish principles from artifact-side qualities, functions, and dispositions?",
+      "row_count": 10,
+      "rows": [
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000020>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000004>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000021>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000005>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000022>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000006>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000023>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000007>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000024>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000008>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000025>",
+          "_:cb1389951037213f283723db407f2fae406c14cf94782cc879d8d2354c8f6014485"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000026>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000010>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000027>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000011>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000028>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000012>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000029>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000013>"
+        ]
+      ],
+      "variables": [
+        "principleClass",
+        "targetExpression"
+      ]
+    },
+    "CQ-06": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq06-evaluated-artifacts.rq",
+      "query_sha256": "29c5434e22bdcc7db4cbb4680c340e54843a066d74cdc78f252ebef0150c34dc",
+      "question": "What artifacts have been evaluated?",
+      "row_count": 2,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/BraunSK4_001>",
+          "\"Braun SK4\"@en"
+        ],
+        [
+          "<http://example.org/gdpo-demo/iPhone15_001>",
+          "\"iPhone 15\"@en"
+        ]
+      ],
+      "variables": [
+        "artifact",
+        "artifactLabel"
+      ]
+    },
+    "CQ-07": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq07-evaluation-criteria.rq",
+      "query_sha256": "be8808a8ae3b602220cbcb50c80c11c0e085aba719cabf2519934a8cfc276ba5",
+      "question": "Which principle criterion was an artifact evaluated against?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/BraunSK4_001>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/BraunSK4_001>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/iPhone15_001>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "artifact",
+        "principle"
+      ]
+    },
+    "CQ-08": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq08-evaluation-temporal-regions.rq",
+      "query_sha256": "a9efd7a9660b0f86e9f0419968ea988df5c623d8d9db75cafbc7b17518e22ccd",
+      "question": "During which temporal region was the evaluation assessed?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/T_2024_06_15>",
+          "\"2024-06-15T00:00:00Z\"@en"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/T_2024_06_16>",
+          "\"2024-06-16T00:00:00Z\"@en"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/T_2024_06_15>",
+          "\"2024-06-15T00:00:00Z\"@en"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "temporalRegion",
+        "temporalLabel"
+      ]
+    },
+    "CQ-09": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq09-evaluation-methods.rq",
+      "query_sha256": "d025238179c7a00e616a39ae8f90b8979a2b681af06a6e4a1be7659624e65eb4",
+      "question": "Which method specification was used?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/BraunSK4_001>",
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/BraunSK4_001>",
+          "<http://example.org/gdpo-demo/ManualHonestyChecklist_v1>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/iPhone15_001>",
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "artifact",
+        "method"
+      ]
+    },
+    "CQ-10": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq10-evaluation-scores.rq",
+      "query_sha256": "165f66a16529a455797c7629429ea5ac01580e13ab5b38b65b99619f11112306",
+      "question": "What score values and scales are associated with the evaluation?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/Score_SK4_Durability_001>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>",
+          "\"0.98\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+          "<http://example.org/gdpo-demo/Scale_0to1_Normalized>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/Score_SK4_ManualHonesty_001>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "\"0.93\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+          "<http://example.org/gdpo-demo/Scale_0to1_Normalized>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/Score_iPhone15_Durability_001>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>",
+          "\"0.65\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+          "<http://example.org/gdpo-demo/Scale_0to1_Normalized>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "score",
+        "principle",
+        "value",
+        "scale"
+      ]
+    },
+    "CQ-11": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/example/a2-6-method-operationalizations.rq",
+      "query_sha256": "6801e3cf9c0b61fb54a218547af2936e299c88c6dd2c6a04cc1279616c7fadd8",
+      "question": "Which methods operationalize which principles?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/ManualHonestyChecklist_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>"
+        ]
+      ],
+      "variables": [
+        "method",
+        "principleToken"
+      ]
+    },
+    "CQ-12": {
+      "execution_kind": "abox-property-path",
+      "inference": "asserted",
+      "query": "queries/cq12-method-derived-relevance.rq",
+      "query_sha256": "ace807dac1ec0a5cdc9b0a43a1618552786748eb5d6e244a3a83d730981a6bce",
+      "question": "Which principles are relevant because of method use?",
+      "row_count": 5,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/ManualHonestyChecklist_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/DurabilityRubric_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "method",
+        "principle"
+      ]
+    },
+    "CQ-13": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq13-explicit-criteria.rq",
+      "query_sha256": "1b5de40581922658b5aca9368d3095477dcb25b0c668c401ebd88dce9e700001",
+      "question": "Which principles were explicitly selected as criteria?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "principle"
+      ]
+    },
+    "CQ-14": {
+      "execution_kind": "owlrl-sparql",
+      "inference": "owlrl",
+      "query": "queries/cq14-honesty-evaluations.rq",
+      "query_sha256": "00426ca1ba3cba0f005106c37e8ddc4257d2f0bd05dacac688fb9bef27fc91a1",
+      "question": "Which records are honesty evaluations?",
+      "row_count": 1,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/BraunSK4_001>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "artifact"
+      ]
+    },
+    "CQ-15": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/example/a2-4-communicative-honesty.rq",
+      "query_sha256": "58f8d0412a4c08fafea7740884dfd6b84bb600161c52c8ccf16459000e4d76c7",
+      "question": "Which records include a paired honesty–communication assessment?",
+      "row_count": 1,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/BraunSK4_001>",
+          "<http://example.org/gdpo-demo/Assessment_SK4_ManualHonesty_2024>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "<http://example.org/gdpo-demo/SK4_UserManual_v1>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "artifact",
+        "assessment",
+        "criterion",
+        "content"
+      ]
+    },
+    "CQ-16": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq16-assessed-communication-content.rq",
+      "query_sha256": "5711d44959c561798de2eb81b7953187643e7004d06a6cc4be7c1b67bd4beac9",
+      "question": "Which communication content entities occur as assessed subjects?",
+      "row_count": 1,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/Assessment_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/SK4_UserManual_v1>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000447>"
+        ]
+      ],
+      "variables": [
+        "evaluation",
+        "assessment",
+        "content",
+        "contentType"
+      ]
+    },
+    "CQ-17": {
+      "execution_kind": "schema-structural-review",
+      "inference": "asserted",
+      "query": "queries/cq17-honesty-facets.rq",
+      "query_sha256": "1f2899fb87d0707ac31c8fefdfa3ced99826ef1f9cfb9e1989d6a8ceeddb0c00",
+      "question": "How are material and functional honesty distinguished?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000041>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000057>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000017>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000041>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000057>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000039>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000042>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000058>",
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000017>"
+        ]
+      ],
+      "variables": [
+        "facet",
+        "basisClass",
+        "realizingProcessClass"
+      ]
+    },
+    "CQ-18": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq18-producing-processes.rq",
+      "query_sha256": "3be2698524572fe52bfa9678f668f844d40903814153b2484ab757741a5a323b",
+      "question": "Which evaluation process produced a record?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/EvalProc_SK4_Durability_2024>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/EvalProc_SK4_ManualHonesty_2024>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/Eval_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/EvalProc_iPhone15_Durability_2024>"
+        ]
+      ],
+      "variables": [
+        "record",
+        "process"
+      ]
+    },
+    "CQ-19": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq19-evaluation-agents.rq",
+      "query_sha256": "300dd4334ebecf66900b05e996a8da80c3c3fc23cb2517f8c556b2fe712bb4f6",
+      "question": "Which agent carried out an evaluation process?",
+      "row_count": 3,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/EvalProc_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/DrJaneSmith>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/EvalProc_SK4_ManualHonesty_2024>",
+          "<http://example.org/gdpo-demo/DrJaneSmith>"
+        ],
+        [
+          "<http://example.org/gdpo-demo/EvalProc_iPhone15_Durability_2024>",
+          "<http://example.org/gdpo-demo/DrJaneSmith>"
+        ]
+      ],
+      "variables": [
+        "process",
+        "agent"
+      ]
+    },
+    "CQ-20": {
+      "execution_kind": "abox-sparql",
+      "inference": "asserted",
+      "query": "queries/cq20-material-bearers.rq",
+      "query_sha256": "a74fc386523866e8b8cef02d428bbcf8150d0a3f69ae0473ba154c89f3f94abb",
+      "question": "Which information content entities have material-bearer provenance?",
+      "row_count": 11,
+      "rows": [
+        [
+          "<http://example.org/gdpo-demo/Eval_SK4_Durability_2024>",
+          "<http://example.org/gdpo-demo/EvalReport_SK4_Durability_Bearer_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000066>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000067>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000068>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000069>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000070>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000071>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000072>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000073>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000074>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ],
+        [
+          "<https://www.ramsprinciplesofgooddesign.com/GDPO0000075>",
+          "<http://example.org/gdpo-demo/RamsTenPrinciplesSource_001>"
+        ]
+      ],
+      "variables": [
+        "informationContent",
+        "bearer"
+      ]
+    }
+  },
+  "dataset": [
+    "ontology/gdpo-1.0.0.ttl",
+    "examples/assessment-fixture.ttl"
+  ],
+  "gdpo_version": "1.0.0",
+  "registry": "queries/competency-question-registry.json",
+  "registry_sha256": "3a94cec70c2104527147737a36d11838c5d5218a0a5716f66bd1898d8d17a81c",
+  "schema_version": "2.0"
+}

@@ -1,0 +1,19 @@
+Good Design Principles Ontology (GDPO)
+Copyright (c) 2026 Timothy W. Coleman
+
+GDPO is an independent ontology project. It is not endorsed by, sponsored by,
+or affiliated with Dieter Rams, Vitsœ, Braun, or their respective rights
+holders.
+
+The ontology identifies Dieter Rams’ ten principles and attributes their
+canonical formulations to the Vitsœ presentation:
+<https://www.vitsoe.com/us/about/good-design>.
+
+Bundled BFO and Common Core Ontologies files retain their upstream copyright,
+license, and notice terms. Their inclusion does not imply endorsement of GDPO,
+and the GDPO license does not change the applicable upstream terms. See
+[`imports/THIRD_PARTY_NOTICES.md`](imports/THIRD_PARTY_NOTICES.md).
+
+Attribution for GDPO should include the project title, Timothy W. Coleman, the
+release version, the repository URL, and an indication of modifications when
+applicable. Machine-readable citation metadata is provided in `CITATION.cff`.

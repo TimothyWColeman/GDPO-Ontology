@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+PREFIX cco: <https://www.commoncoreontologies.org/>
+
+SELECT DISTINCT ?principle ?component ?processType WHERE {
+  ?principle gdpo:GDPO0000062 ?component .
+  ?component a gdpo:GDPO0000061, ?restriction .
+  ?restriction a owl:Restriction ;
+               owl:onProperty cco:ont00001942 ;
+               owl:allValuesFrom ?processType .
+}
+ORDER BY ?principle ?component ?processType

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "ontology_release": "1.0.0",
+  "retrieval_provenance": {
+    "reused_from": "verified local snapshots from the upstream releases listed below",
+    "retrieval_date": "2026-07-30",
+    "checksum_algorithm": "SHA-256"
+  },
+  "releases": {
+    "bfo": {
+      "name": "Basic Formal Ontology 2020",
+      "release": "release-2024-01-29",
+      "release_url": "https://github.com/BFO-ontology/BFO-2020/tree/release-2024-01-29"
+    },
+    "cco": {
+      "name": "Common Core Ontologies",
+      "release": "v2.0-2024-11-06",
+      "release_url": "https://github.com/CommonCoreOntology/CommonCoreOntologies/releases/tag/v2.0-2024-11-06"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "imports/bfo-core.owl",
+      "sha256": "af81eb7144c3d3db3a2d2beabff9dd299b14a91dc69cc84e663ca91e0c98039c",
+      "ontology_iri": "http://purl.obolibrary.org/obo/bfo.owl",
+      "version_iri": "http://purl.obolibrary.org/obo/bfo/2020/bfo-core.owl",
+      "source_url": "https://raw.githubusercontent.com/BFO-ontology/BFO-2020/release-2024-01-29/src/owl/bfo-core.owl"
+    },
+    {
+      "path": "imports/cco-AgentOntology.ttl",
+      "sha256": "ab9989895089f8adb445426c5bcfc9bc1a1100f981c15b1e7349fd71bfe18e85",
+      "ontology_iri": "https://www.commoncoreontologies.org/AgentOntology",
+      "version_iri": "https://www.commoncoreontologies.org/2024-11-05/AgentOntology",
+      "source_url": "https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/v2.0-2024-11-06/src/cco-modules/AgentOntology.ttl"
+    },
+    {
+      "path": "imports/cco-ArtifactOntology.ttl",
+      "sha256": "ce1b82d139775d94c986367c65aaa0337dbef1ad7e8bf54e46090291b1d4139e",
+      "ontology_iri": "https://www.commoncoreontologies.org/ArtifactOntology",
+      "version_iri": "https://www.commoncoreontologies.org/2024-11-06/ArtifactOntology",
+      "source_url": "https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/v2.0-2024-11-06/src/cco-modules/ArtifactOntology.ttl"
+    },
+    {
+      "path": "imports/cco-InformationEntityOntology.ttl",
+      "sha256": "a074aaf66f3d7177b6293ff5714c8a86a7b00ca47e357dd0c91e3def697e9d9f",
+      "ontology_iri": "https://www.commoncoreontologies.org/InformationEntityOntology",
+      "version_iri": "https://www.commoncoreontologies.org/2024-11-06/InformationEntityOntology",
+      "source_url": "https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/v2.0-2024-11-06/src/cco-modules/InformationEntityOntology.ttl"
+    },
+    {
+      "path": "imports/cco-GeospatialOntology.ttl",
+      "sha256": "a0d41377532d07e0365e82b850b4becf4bfb758ad5f96fe54389e1e6b829420e",
+      "ontology_iri": "https://www.commoncoreontologies.org/GeospatialOntology",
+      "version_iri": "https://www.commoncoreontologies.org/2024-11-06/GeospatialOntology",
+      "source_url": "https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/v2.0-2024-11-06/src/cco-modules/GeospatialOntology.ttl"
+    },
+    {
+      "path": "imports/cco-TimeOntology.ttl",
+      "sha256": "d3e1fa709428f91f9dbbc414df3905e5a4160e35555df0d0f80adf708b667753",
+      "ontology_iri": "https://www.commoncoreontologies.org/TimeOntology",
+      "version_iri": "https://www.commoncoreontologies.org/2024-11-06/TimeOntology",
+      "source_url": "https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/v2.0-2024-11-06/src/cco-modules/TimeOntology.ttl"
+    },
+    {
+      "path": "imports/cco-ExtendedRelationOntology.ttl",
+      "sha256": "f3293b3b508b846b21bf7c0e57e0e699365b144b7a07f82bb190c3e0c79399d9",
+      "ontology_iri": "https://www.commoncoreontologies.org/ExtendedRelationOntology",
+      "version_iri": "https://www.commoncoreontologies.org/2024-11-06/ExtendedRelationOntology",
+      "source_url": "https://raw.githubusercontent.com/CommonCoreOntology/CommonCoreOntologies/v2.0-2024-11-06/src/cco-modules/ExtendedRelationOntology.ttl"
+    }
+  ]
+}

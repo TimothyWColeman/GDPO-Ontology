@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+PREFIX cco: <https://www.commoncoreontologies.org/>
+
+SELECT DISTINCT ?principleClass ?processType ?stageExpression WHERE {
+  ?principleClass rdfs:subClassOf gdpo:GDPO0000003 .
+  FILTER (?principleClass != gdpo:GDPO0000003)
+
+  ?principleClass rdfs:subClassOf ?restriction .
+  ?restriction owl:onProperty gdpo:GDPO0000062 ;
+               owl:someValuesFrom ?componentExpression .
+
+  ?componentExpression owl:intersectionOf/rdf:rest*/rdf:first ?processPart .
+  ?processPart owl:onProperty cco:ont00001942 ;
+               owl:allValuesFrom ?processType .
+
+  ?componentExpression owl:intersectionOf/rdf:rest*/rdf:first ?stagePart .
+  ?stagePart owl:onProperty gdpo:GDPO0000063 ;
+             owl:allValuesFrom ?stageExpression .
+}
+ORDER BY ?principleClass ?processType

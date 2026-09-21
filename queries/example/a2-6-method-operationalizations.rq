@@ -1,0 +1,7 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?method ?principleToken WHERE {
+  ?method a gdpo:GDPO0000052 ;
+          gdpo:GDPO0000054 ?principleToken .
+}
+ORDER BY ?method ?principleToken

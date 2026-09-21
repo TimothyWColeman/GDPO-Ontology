@@ -1,0 +1,95 @@
+@prefix ex: <https://example.org/gdpo-example/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix gdpo: <https://www.ramsprinciplesofgooddesign.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/gdpo-example>
+    rdf:type owl:Ontology ;
+    owl:imports <https://www.ramsprinciplesofgooddesign.com/GoodDesignPrinciplesOntology> ;
+    rdfs:comment "Minimal GDPO ABox example showing an artifact, an evaluation record, a method, a score component, and optional material-bearer provenance."@en .
+
+ex:example-radio
+    rdf:type bfo:BFO_0000040 ;
+    rdfs:label "Example radio"@en .
+
+ex:evaluation-temporal-region-2026-05-11
+    rdf:type bfo:BFO_0000008 ;
+    rdfs:label "Example evaluation temporal region, 2026-05-11"@en .
+
+ex:example-evaluator
+    rdf:type cco:ont00001017 ;
+    rdfs:label "Example evaluator"@en .
+
+ex:usefulness-review-method
+    rdf:type gdpo:GDPO0000052 ;
+    gdpo:GDPO0000054 gdpo:GDPO0000067 ;
+    rdfs:label "Usefulness review method"@en .
+
+ex:five-point-score-scale
+    rdf:type gdpo:GDPO0000461 ;
+    rdfs:label "Five-point design evaluation score scale"@en ;
+    rdfs:comment "A scale where 1 indicates poor conformance and 5 indicates strong conformance."@en .
+
+ex:example-radio-usefulness-score
+    rdf:type gdpo:GDPO0000456 ;
+    gdpo:GDPO0000458 gdpo:GDPO0000067 ;
+    gdpo:GDPO0000459 "4.0"^^xsd:decimal ;
+    gdpo:GDPO0000460 ex:five-point-score-scale ;
+    rdfs:label "Example radio usefulness score"@en .
+
+ex:example-radio-usefulness-evaluation-record
+    rdf:type gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:example-radio ;
+    gdpo:GDPO0000046 gdpo:GDPO0000067 ;
+    gdpo:GDPO0000048 ex:usefulness-review-method ;
+    gdpo:GDPO0000457 ex:example-radio-usefulness-score ;
+    gdpo:GDPO0000462 ex:example-radio-usefulness-evaluation-process ;
+    gdpo:GDPO0000468 ex:evaluation-temporal-region-2026-05-11 ;
+    rdfs:label "Example radio usefulness evaluation record"@en .
+
+ex:example-radio-evaluation-report-pdf
+    rdf:type bfo:BFO_0000040 ;
+    rdfs:label "Example radio evaluation report PDF"@en .
+
+ex:example-radio-usefulness-evaluation-record
+    gdpo:GDPO0000464 ex:example-radio-evaluation-report-pdf .
+
+ex:example-radio-label-content
+    rdf:type gdpo:GDPO0000448 ;
+    rdfs:label "Example radio label content"@en .
+
+ex:example-radio-label-honesty-assessment
+    rdf:type gdpo:GDPO0000472 ;
+    gdpo:GDPO0000470 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000471 ex:example-radio-label-content ;
+    rdfs:label "Example radio label honesty assessment component"@en .
+
+ex:example-radio-communicative-honesty-evaluation-record
+    rdf:type gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:example-radio ;
+    gdpo:GDPO0000046 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000450 ex:example-radio-label-content ;
+    gdpo:GDPO0000469 ex:example-radio-label-honesty-assessment ;
+    gdpo:GDPO0000462 ex:example-radio-communicative-honesty-evaluation-process ;
+    gdpo:GDPO0000468 ex:evaluation-temporal-region-2026-05-11 ;
+    rdfs:label "Example radio communicative honesty evaluation record"@en .
+
+ex:example-radio-usefulness-evaluation-process
+    rdf:type gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:evaluation-temporal-region-2026-05-11 ;
+    gdpo:GDPO0000051 ex:example-evaluator ;
+    gdpo:GDPO0000463 ex:example-radio-usefulness-evaluation-record ;
+    gdpo:GDPO0000465 ex:example-radio ;
+    rdfs:label "Example radio usefulness evaluation process"@en .
+
+ex:example-radio-communicative-honesty-evaluation-process
+    rdf:type gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:evaluation-temporal-region-2026-05-11 ;
+    gdpo:GDPO0000051 ex:example-evaluator ;
+    gdpo:GDPO0000463 ex:example-radio-communicative-honesty-evaluation-record ;
+    gdpo:GDPO0000465 ex:example-radio ;
+    rdfs:label "Example radio communicative honesty evaluation process"@en .

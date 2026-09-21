@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?principle ?label ?canonicalText WHERE {
+  gdpo:GDPO0000065 gdpo:GDPO0000060 ?principle .
+  ?principle rdfs:label ?label ;
+             gdpo:GDPO0000453 ?canonicalText .
+}
+ORDER BY ?principle

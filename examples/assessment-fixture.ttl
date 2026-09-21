@@ -1,0 +1,139 @@
+@prefix ex: <http://example.org/gdpo-demo/> .
+@prefix gdpo: <https://www.ramsprinciplesofgooddesign.com/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# The products and scores below are illustrative test fixtures, not empirical
+# judgments about the named products.
+
+ex:BraunSK4_001 a bfo:BFO_0000040 ;
+    rdfs:label "Braun SK4"@en .
+
+ex:iPhone15_001 a bfo:BFO_0000040 ;
+    rdfs:label "iPhone 15"@en .
+
+ex:RamsTenPrinciplesSource_001 a bfo:BFO_0000040 ;
+    rdfs:label "storage medium bearing a captured copy of the Vitsœ ten-principles source"@en .
+
+gdpo:GDPO0000066 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000067 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000068 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000069 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000070 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000071 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000072 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000073 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000074 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+gdpo:GDPO0000075 gdpo:GDPO0000464 ex:RamsTenPrinciplesSource_001 .
+
+ex:DurabilityRubric_v1 a gdpo:GDPO0000052 ;
+    rdfs:label "Durability and environmental-impact rubric v1"@en ;
+    gdpo:GDPO0000054 gdpo:GDPO0000072, gdpo:GDPO0000074 .
+
+ex:ManualHonestyChecklist_v1 a gdpo:GDPO0000052 ;
+    rdfs:label "Manual honesty checklist v1"@en ;
+    gdpo:GDPO0000054 gdpo:GDPO0000071 .
+
+ex:Scale_0to1_Normalized a gdpo:GDPO0000461 ;
+    rdfs:label "Normalized 0–1 scale (higher is better)"@en .
+
+ex:T_2024_06_15 a bfo:BFO_0000203 ;
+    rdfs:label "2024-06-15T00:00:00Z"@en .
+
+ex:T_2024_06_16 a bfo:BFO_0000203 ;
+    rdfs:label "2024-06-16T00:00:00Z"@en .
+
+ex:Score_SK4_Durability_001 a gdpo:GDPO0000456 ;
+    rdfs:label "SK4 durability score (0–1)"@en ;
+    gdpo:GDPO0000458 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000459 "0.98"^^xsd:decimal ;
+    gdpo:GDPO0000460 ex:Scale_0to1_Normalized .
+
+ex:Score_iPhone15_Durability_001 a gdpo:GDPO0000456 ;
+    rdfs:label "iPhone 15 durability score (0–1)"@en ;
+    gdpo:GDPO0000458 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000459 "0.65"^^xsd:decimal ;
+    gdpo:GDPO0000460 ex:Scale_0to1_Normalized .
+
+ex:Score_SK4_ManualHonesty_001 a gdpo:GDPO0000456 ;
+    rdfs:label "SK4 manual honesty score (0–1)"@en ;
+    gdpo:GDPO0000458 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000459 "0.93"^^xsd:decimal ;
+    gdpo:GDPO0000460 ex:Scale_0to1_Normalized .
+
+ex:EvalReport_SK4_Durability_Bearer_001 a bfo:BFO_0000040 ;
+    rdfs:label "storage medium bearing the SK4 durability evaluation report"@en .
+
+ex:Eval_SK4_Durability_2024 a gdpo:GDPO0000044 ;
+    rdfs:label "SK4 durability evaluation record (2024-06-15)"@en ;
+    gdpo:GDPO0000045 ex:BraunSK4_001 ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000048 ex:DurabilityRubric_v1 ;
+    gdpo:GDPO0000050 "2024-06-15T00:00:00Z"^^xsd:dateTime ;
+    gdpo:GDPO0000457 ex:Score_SK4_Durability_001 ;
+    gdpo:GDPO0000462 ex:EvalProc_SK4_Durability_2024 ;
+    gdpo:GDPO0000464 ex:EvalReport_SK4_Durability_Bearer_001 ;
+    gdpo:GDPO0000468 ex:T_2024_06_15 .
+
+ex:Eval_iPhone15_Durability_2024 a gdpo:GDPO0000044 ;
+    rdfs:label "iPhone 15 durability evaluation record (2024-06-15)"@en ;
+    gdpo:GDPO0000045 ex:iPhone15_001 ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000048 ex:DurabilityRubric_v1 ;
+    gdpo:GDPO0000050 "2024-06-15T00:00:00Z"^^xsd:dateTime ;
+    gdpo:GDPO0000457 ex:Score_iPhone15_Durability_001 ;
+    gdpo:GDPO0000462 ex:EvalProc_iPhone15_Durability_2024 ;
+    gdpo:GDPO0000468 ex:T_2024_06_15 .
+
+ex:SK4_UserManual_v1 a gdpo:GDPO0000447 ;
+    rdfs:label "SK4 user manual (content)"@en .
+
+ex:Assessment_SK4_ManualHonesty_2024 a gdpo:GDPO0000472 ;
+    rdfs:label "SK4 user-manual honesty assessment component (2024-06-16)"@en ;
+    gdpo:GDPO0000470 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000471 ex:SK4_UserManual_v1 .
+
+ex:Eval_SK4_ManualHonesty_2024 a gdpo:GDPO0000044 ;
+    rdfs:label "SK4 manual honesty evaluation record (2024-06-16)"@en ;
+    gdpo:GDPO0000045 ex:BraunSK4_001 ;
+    gdpo:GDPO0000046 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000048 ex:ManualHonestyChecklist_v1 ;
+    gdpo:GDPO0000050 "2024-06-16T00:00:00Z"^^xsd:dateTime ;
+    gdpo:GDPO0000450 ex:SK4_UserManual_v1 ;
+    gdpo:GDPO0000457 ex:Score_SK4_ManualHonesty_001 ;
+    gdpo:GDPO0000462 ex:EvalProc_SK4_ManualHonesty_2024 ;
+    gdpo:GDPO0000468 ex:T_2024_06_16 ;
+    gdpo:GDPO0000469 ex:Assessment_SK4_ManualHonesty_2024 .
+
+ex:DrJaneSmith a cco:ont00001017 ;
+    rdfs:label "Dr. Jane Smith"@en .
+
+ex:EvalProc_SK4_Durability_2024 a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:T_2024_06_15 ;
+    gdpo:GDPO0000051 ex:DrJaneSmith ;
+    gdpo:GDPO0000463 ex:Eval_SK4_Durability_2024 ;
+    gdpo:GDPO0000465 ex:BraunSK4_001 .
+
+ex:EvalProc_iPhone15_Durability_2024 a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:T_2024_06_15 ;
+    gdpo:GDPO0000051 ex:DrJaneSmith ;
+    gdpo:GDPO0000463 ex:Eval_iPhone15_Durability_2024 ;
+    gdpo:GDPO0000465 ex:iPhone15_001 .
+
+ex:EvalProc_SK4_ManualHonesty_2024 a gdpo:GDPO0000055 ;
+    bfo:BFO_0000199 ex:T_2024_06_16 ;
+    gdpo:GDPO0000051 ex:DrJaneSmith ;
+    gdpo:GDPO0000463 ex:Eval_SK4_ManualHonesty_2024 ;
+    gdpo:GDPO0000465 ex:BraunSK4_001 .
+
+ex:SK4_DurabilityDisposition_001 a gdpo:GDPO0000010 ;
+    bfo:BFO_0000197 ex:BraunSK4_001 ;
+    bfo:BFO_0000054 ex:SK4_EnduranceProcess_001 .
+
+ex:SK4_EnduranceProcess_001 a gdpo:GDPO0000018 ;
+    bfo:BFO_0000057 ex:BraunSK4_001 .
+
+ex:iPhone15_DurabilityDisposition_001 a gdpo:GDPO0000010 ;
+    bfo:BFO_0000197 ex:iPhone15_001 .

@@ -1,0 +1,82 @@
+@prefix ex: <https://example.org/gdpo-validation/> .
+@prefix gdpo: <https://www.ramsprinciplesofgooddesign.com/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:artifact a bfo:BFO_0000001, bfo:BFO_0000040 .
+ex:interval a bfo:BFO_0000008 .
+ex:agent a cco:ont00001017 .
+
+ex:method a gdpo:GDPO0000052 ;
+    gdpo:GDPO0000054 gdpo:GDPO0000072 .
+
+ex:scale a gdpo:GDPO0000461 .
+
+ex:score a gdpo:GDPO0000456 ;
+    gdpo:GDPO0000458 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000459 "0.90"^^xsd:decimal ;
+    gdpo:GDPO0000460 ex:scale .
+
+ex:record a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000048 ex:method ;
+    gdpo:GDPO0000457 ex:score ;
+    gdpo:GDPO0000462 ex:process ;
+    gdpo:GDPO0000468 ex:interval .
+
+ex:process a gdpo:GDPO0000055 ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:record ;
+    gdpo:GDPO0000465 ex:artifact ;
+    bfo:BFO_0000199 ex:interval .
+
+# This record is explicitly typed for profile validation. Its assessment
+# component, rather than its independent record-level links, carries the
+# criterion–subject pairing required by the communicative-honesty class.
+ex:communication-content a bfo:BFO_0000001, gdpo:GDPO0000447 .
+
+ex:paired-honesty-assessment a gdpo:GDPO0000472 ;
+    gdpo:GDPO0000470 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000471 ex:communication-content .
+
+ex:paired-communicative-honesty-record a gdpo:GDPO0000044, gdpo:GDPO0000452 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000450 ex:communication-content ;
+    gdpo:GDPO0000462 ex:paired-communicative-honesty-process ;
+    gdpo:GDPO0000468 ex:interval ;
+    gdpo:GDPO0000469 ex:paired-honesty-assessment .
+
+ex:paired-communicative-honesty-process a gdpo:GDPO0000055 ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:paired-communicative-honesty-record ;
+    gdpo:GDPO0000465 ex:artifact ;
+    bfo:BFO_0000199 ex:interval .
+
+# Crossed control: the record has record-level honesty and communication links,
+# but no one component pairs those two values. It must not be inferred as a
+# design communicative honesty evaluation.
+ex:crossed-honesty-artifact-assessment a gdpo:GDPO0000472 ;
+    gdpo:GDPO0000470 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000471 ex:artifact .
+
+ex:crossed-durability-communication-assessment a gdpo:GDPO0000472 ;
+    gdpo:GDPO0000470 gdpo:GDPO0000072 ;
+    gdpo:GDPO0000471 ex:communication-content .
+
+ex:crossed-criterion-subject-record a gdpo:GDPO0000044 ;
+    gdpo:GDPO0000045 ex:artifact ;
+    gdpo:GDPO0000046 gdpo:GDPO0000071 ;
+    gdpo:GDPO0000450 ex:communication-content ;
+    gdpo:GDPO0000462 ex:crossed-criterion-subject-process ;
+    gdpo:GDPO0000468 ex:interval ;
+    gdpo:GDPO0000469 ex:crossed-honesty-artifact-assessment,
+        ex:crossed-durability-communication-assessment .
+
+ex:crossed-criterion-subject-process a gdpo:GDPO0000055 ;
+    gdpo:GDPO0000051 ex:agent ;
+    gdpo:GDPO0000463 ex:crossed-criterion-subject-record ;
+    gdpo:GDPO0000465 ex:artifact ;
+    bfo:BFO_0000199 ex:interval .

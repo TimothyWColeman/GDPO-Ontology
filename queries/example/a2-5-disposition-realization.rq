@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bfo: <http://purl.obolibrary.org/obo/>
+PREFIX ex: <http://example.org/gdpo-demo/>
+
+SELECT DISTINCT ?disposition ?dispositionType ?realized ?realizingProcess WHERE {
+  VALUES ?artifact { ex:BraunSK4_001 }
+
+  ?disposition bfo:BFO_0000197 ?artifact ;
+               a ?dispositionType .
+  ?dispositionType rdfs:subClassOf* bfo:BFO_0000016 .
+
+  OPTIONAL { ?disposition bfo:BFO_0000054 ?realizingProcess . }
+  BIND (BOUND(?realizingProcess) AS ?realized)
+}
+ORDER BY ?disposition

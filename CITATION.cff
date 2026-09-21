@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use the Good Design Principles Ontology, please cite this release."
+title: "Good Design Principles Ontology"
+type: software
+authors:
+  - family-names: Coleman
+    given-names: Timothy W.
+version: 1.0.0
+date-released: 2026-09-21
+license: CC-BY-4.0
+url: "https://www.ramsprinciplesofgooddesign.com/GoodDesignPrinciplesOntology"
+repository-code: "https://github.com/TimothyWColeman/GDPO-Ontology"
+keywords:
+  - ontology
+  - design
+  - evaluation
+  - BFO
+  - CCO

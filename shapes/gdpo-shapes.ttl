@@ -1,0 +1,222 @@
+@prefix gdpo: <https://www.ramsprinciplesofgooddesign.com/> .
+@prefix gshape: <https://www.ramsprinciplesofgooddesign.com/shapes/> .
+@prefix bfo: <http://purl.obolibrary.org/obo/> .
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gshape:DesignEvaluationRecordShape
+    a sh:NodeShape ;
+    sh:targetClass gdpo:GDPO0000044 ;
+    sh:property [
+        sh:path gdpo:GDPO0000045 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class bfo:BFO_0000040 ;
+        sh:message "[GDPO-S001] A design evaluation record must concern exactly one material artifact."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000046 ;
+        sh:minCount 1 ;
+        sh:class gdpo:GDPO0000003 ;
+        sh:message "[GDPO-S002] A design evaluation record must identify at least one design principle criterion."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000468 ;
+        sh:minCount 1 ;
+        sh:class bfo:BFO_0000008 ;
+        sh:message "[GDPO-S003] A design evaluation record must identify an assessment temporal region."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000462 ;
+        sh:minCount 1 ;
+        sh:class gdpo:GDPO0000055 ;
+        sh:message "[GDPO-S006] A design evaluation record must identify at least one producing design evaluation process."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000048 ;
+        sh:class gdpo:GDPO0000052 ;
+        sh:message "[GDPO-S004] Every linked evaluation method must be an evaluation method specification."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000457 ;
+        sh:class gdpo:GDPO0000456 ;
+        sh:message "[GDPO-S005] Every linked score component must be a design evaluation score."@en ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "[GDPO-S007] A design evaluation record and each producing process must identify exactly the same evaluated artifact."@en ;
+        sh:select """
+            PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+            SELECT DISTINCT $this
+            WHERE {
+                $this gdpo:GDPO0000462 ?process ;
+                    gdpo:GDPO0000045 ?recordArtifact .
+                ?process gdpo:GDPO0000465 ?processArtifact .
+                FILTER (
+                    NOT EXISTS {
+                        ?process gdpo:GDPO0000465 ?recordArtifact .
+                    }
+                    || NOT EXISTS {
+                        $this gdpo:GDPO0000045 ?processArtifact .
+                    }
+                )
+            }
+        """ ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "[GDPO-S008] A design evaluation record and each producing process must identify exactly the same assessment temporal region."@en ;
+        sh:select """
+            PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+            PREFIX bfo: <http://purl.obolibrary.org/obo/>
+            SELECT DISTINCT $this
+            WHERE {
+                $this gdpo:GDPO0000462 ?process ;
+                    gdpo:GDPO0000468 ?recordRegion .
+                ?process bfo:BFO_0000199 ?processRegion .
+                FILTER (
+                    NOT EXISTS {
+                        ?process bfo:BFO_0000199 ?recordRegion .
+                    }
+                    || NOT EXISTS {
+                        $this gdpo:GDPO0000468 ?processRegion .
+                    }
+                )
+            }
+        """ ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "[GDPO-S009] Every record-to-producing-process link must have an explicit reciprocal process-to-output-record link."@en ;
+        sh:select """
+            PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+            SELECT DISTINCT $this
+            WHERE {
+                $this gdpo:GDPO0000462 ?process .
+                FILTER NOT EXISTS {
+                    ?process gdpo:GDPO0000463 $this .
+                }
+            }
+        """ ;
+    ] .
+
+gshape:DesignEvaluationScoreShape
+    a sh:NodeShape ;
+    sh:targetClass gdpo:GDPO0000456 ;
+    sh:property [
+        sh:path gdpo:GDPO0000458 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class gdpo:GDPO0000003 ;
+        sh:message "[GDPO-S101] A score component must identify exactly one scored principle."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000459 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:message "[GDPO-S102] A score component must carry exactly one decimal score value."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000460 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class gdpo:GDPO0000461 ;
+        sh:message "[GDPO-S103] A score component must identify exactly one score scale specification."@en ;
+    ] .
+
+gshape:EvaluationMethodShape
+    a sh:NodeShape ;
+    sh:targetClass gdpo:GDPO0000052 ;
+    sh:property [
+        sh:path gdpo:GDPO0000054 ;
+        sh:minCount 1 ;
+        sh:class gdpo:GDPO0000003 ;
+        sh:message "[GDPO-S201] An evaluation method must operationalize at least one design principle."@en ;
+    ] .
+
+gshape:DesignEvaluationProcessShape
+    a sh:NodeShape ;
+    sh:targetClass gdpo:GDPO0000055 ;
+    sh:property [
+        sh:path gdpo:GDPO0000051 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class cco:ont00001017 ;
+        sh:message "[GDPO-S301] A design evaluation process must identify exactly one conducting agent."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000463 ;
+        sh:minCount 1 ;
+        sh:class gdpo:GDPO0000044 ;
+        sh:message "[GDPO-S302] A design evaluation process must produce at least one evaluation record."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000465 ;
+        sh:minCount 1 ;
+        sh:class bfo:BFO_0000040 ;
+        sh:message "[GDPO-S303] A design evaluation process must identify an evaluated artifact."@en ;
+    ] ;
+    sh:property [
+        sh:path bfo:BFO_0000199 ;
+        sh:minCount 1 ;
+        sh:class bfo:BFO_0000008 ;
+        sh:message "[GDPO-S304] A design evaluation process must occupy a temporal region."@en ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "[GDPO-S305] Every process-to-output-record link must have an explicit reciprocal record-to-producing-process link."@en ;
+        sh:select """
+            PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+            SELECT DISTINCT $this
+            WHERE {
+                $this gdpo:GDPO0000463 ?record .
+                FILTER NOT EXISTS {
+                    ?record gdpo:GDPO0000462 $this .
+                }
+            }
+        """ ;
+    ] .
+
+gshape:DesignCriterionSubjectAssessmentComponentShape
+    a sh:NodeShape ;
+    sh:targetClass gdpo:GDPO0000472 ;
+    sh:property [
+        sh:path gdpo:GDPO0000470 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class gdpo:GDPO0000003 ;
+        sh:message "[GDPO-S401] A criterion–subject assessment component must identify exactly one design-principle criterion."@en ;
+    ] ;
+    sh:property [
+        sh:path gdpo:GDPO0000471 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "[GDPO-S402] A criterion–subject assessment component must identify exactly one IRI-referenced assessed subject; the ontology range is BFO entity."@en ;
+    ] .
+
+gshape:CommunicativeHonestyRecordShape
+    a sh:NodeShape ;
+    sh:targetClass gdpo:GDPO0000452 ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "[GDPO-S403] A design communicative honesty evaluation must have an assessment component that pairs a principle of honesty with design communication content."@en ;
+        sh:select """
+            PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT DISTINCT $this
+            WHERE {
+                FILTER NOT EXISTS {
+                    $this gdpo:GDPO0000469 ?component .
+                    ?component gdpo:GDPO0000470 ?criterion ;
+                               gdpo:GDPO0000471 ?subject .
+                    ?criterion a gdpo:GDPO0000025 .
+                    ?subject a ?subjectType .
+                    ?subjectType rdfs:subClassOf* gdpo:GDPO0000446 .
+                }
+            }
+        """ ;
+    ] .

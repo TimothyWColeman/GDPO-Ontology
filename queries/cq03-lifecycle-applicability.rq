@@ -1,0 +1,17 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?principle ?component ?stage WHERE {
+  ?principle gdpo:GDPO0000062 ?component .
+  ?component a gdpo:GDPO0000061, ?restriction .
+  ?restriction a owl:Restriction ;
+               owl:onProperty gdpo:GDPO0000063 ;
+               owl:allValuesFrom ?stageExpression .
+  OPTIONAL {
+    ?stageExpression owl:unionOf/rdf:rest*/rdf:first ?memberStage .
+  }
+  BIND(COALESCE(?memberStage, ?stageExpression) AS ?stage)
+  FILTER(isIRI(?stage))
+}
+ORDER BY ?principle ?component ?stage

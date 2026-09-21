@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="https://www.ramsprinciplesofgooddesign.com/GoodDesignPrinciplesOntology" uri="gdpo-1.0.0.ttl"/>
+  <uri name="https://www.ramsprinciplesofgooddesign.com/GoodDesignPrinciplesOntology20260921v1.0.0" uri="gdpo-1.0.0.ttl"/>
+
+  <uri name="http://purl.obolibrary.org/obo/bfo.owl" uri="../imports/bfo-core.owl"/>
+  <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl" uri="../imports/bfo-core.owl"/>
+  <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.owl" uri="../imports/bfo-core.owl"/>
+  <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl" uri="../imports/bfo-core.owl"/>
+
+  <uri name="https://www.commoncoreontologies.org/AgentOntology" uri="../imports/cco-AgentOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/2024-11-05/AgentOntology" uri="../imports/cco-AgentOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/ArtifactOntology" uri="../imports/cco-ArtifactOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/2024-11-06/ArtifactOntology" uri="../imports/cco-ArtifactOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/InformationEntityOntology" uri="../imports/cco-InformationEntityOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/2024-11-06/InformationEntityOntology" uri="../imports/cco-InformationEntityOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/GeospatialOntology" uri="../imports/cco-GeospatialOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/2024-11-06/GeospatialOntology" uri="../imports/cco-GeospatialOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/TimeOntology" uri="../imports/cco-TimeOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/2024-11-06/TimeOntology" uri="../imports/cco-TimeOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/ExtendedRelationOntology" uri="../imports/cco-ExtendedRelationOntology.ttl"/>
+  <uri name="https://www.commoncoreontologies.org/2024-11-06/ExtendedRelationOntology" uri="../imports/cco-ExtendedRelationOntology.ttl"/>
+</catalog>

@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?principleClass ?principleLabel ?targetExpression WHERE {
+  ?principleClass rdfs:subClassOf gdpo:GDPO0000003 .
+  FILTER (?principleClass != gdpo:GDPO0000003)
+
+  ?principleClass rdfs:subClassOf ?restriction .
+  ?restriction owl:onProperty gdpo:GDPO0000454 ;
+               owl:allValuesFrom ?targetExpression .
+
+  OPTIONAL { ?principleClass rdfs:label ?principleLabel . }
+}
+ORDER BY ?principleLabel

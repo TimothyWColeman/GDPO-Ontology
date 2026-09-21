@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?evaluation ?temporalRegion ?temporalLabel WHERE {
+  ?evaluation a gdpo:GDPO0000044 ;
+              gdpo:GDPO0000468 ?temporalRegion .
+  OPTIONAL { ?temporalRegion rdfs:label ?temporalLabel . }
+}
+ORDER BY ?evaluation ?temporalRegion

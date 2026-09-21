@@ -1,0 +1,25 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT ?artifact ?latestTime ?scoreValue ?scale WHERE {
+  VALUES ?principleToken { gdpo:GDPO0000072 }
+
+  {
+    SELECT ?artifact (MAX(?time) AS ?latestTime) WHERE {
+      ?evaluation a gdpo:GDPO0000044 ;
+                  gdpo:GDPO0000045 ?artifact ;
+                  gdpo:GDPO0000050 ?time ;
+                  gdpo:GDPO0000457 ?scoreComponent .
+      ?scoreComponent gdpo:GDPO0000458 ?principleToken .
+    }
+    GROUP BY ?artifact
+  }
+
+  ?evaluation a gdpo:GDPO0000044 ;
+              gdpo:GDPO0000045 ?artifact ;
+              gdpo:GDPO0000050 ?latestTime ;
+              gdpo:GDPO0000457 ?scoreComponent .
+  ?scoreComponent gdpo:GDPO0000458 ?principleToken ;
+                  gdpo:GDPO0000459 ?scoreValue ;
+                  gdpo:GDPO0000460 ?scale .
+}
+ORDER BY DESC(?scoreValue)

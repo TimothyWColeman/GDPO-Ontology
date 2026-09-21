@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "gdpo_version": "1.0.0",
+  "dataset": [
+    "ontology/gdpo-1.0.0.ttl",
+    "examples/assessment-fixture.ttl"
+  ],
+  "competency_questions": [
+    {"id":"CQ-01","concern":"principles-and-prescriptions","question":"Which target class expressions are associated with each principle?","execution_kind":"schema-sparql","inference":"asserted","query":"queries/example/a2-1-target-expressions.rq"},
+    {"id":"CQ-02","concern":"principles-and-prescriptions","question":"Which process types constrain the intended prescriptions of each principle?","execution_kind":"schema-sparql","inference":"asserted","query":"queries/cq02-prescribed-process-types.rq"},
+    {"id":"CQ-03","concern":"principles-and-prescriptions","question":"Which lifecycle-stage process types constrain each prescription's intended applicability?","execution_kind":"schema-sparql","inference":"asserted","query":"queries/cq03-lifecycle-applicability.rq"},
+    {"id":"CQ-04","concern":"principles-and-prescriptions","question":"Which principles are included in the Rams ten principles specification?","execution_kind":"schema-sparql","inference":"asserted","query":"queries/cq04-specification-components.rq"},
+    {"id":"CQ-05","concern":"principles-and-prescriptions","question":"How does GDPO distinguish principles from artifact-side qualities, functions, and dispositions?","execution_kind":"schema-structural-review","inference":"asserted","query":"queries/cq05-principle-target-distinction.rq","review_note":"The exact query result is paired with structural class-expression checks in validation/validate_gdpo.py."},
+    {"id":"CQ-06","concern":"evaluations","question":"What artifacts have been evaluated?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq06-evaluated-artifacts.rq"},
+    {"id":"CQ-07","concern":"evaluations","question":"Which principle criterion was an artifact evaluated against?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq07-evaluation-criteria.rq"},
+    {"id":"CQ-08","concern":"evaluations","question":"During which temporal region was the evaluation assessed?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq08-evaluation-temporal-regions.rq"},
+    {"id":"CQ-09","concern":"evaluations","question":"Which method specification was used?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq09-evaluation-methods.rq"},
+    {"id":"CQ-10","concern":"evaluations","question":"What score values and scales are associated with the evaluation?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq10-evaluation-scores.rq"},
+    {"id":"CQ-11","concern":"methods-and-relevance","question":"Which methods operationalize which principles?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/example/a2-6-method-operationalizations.rq"},
+    {"id":"CQ-12","concern":"methods-and-relevance","question":"Which principles are relevant because of method use?","execution_kind":"abox-property-path","inference":"asserted","query":"queries/cq12-method-derived-relevance.rq","review_note":"The path is also entailed as GDPO0000059 by the OWL property-chain assessment-fixture test."},
+    {"id":"CQ-13","concern":"methods-and-relevance","question":"Which principles were explicitly selected as criteria?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq13-explicit-criteria.rq"},
+    {"id":"CQ-14","concern":"honesty-and-communication","question":"Which records are honesty evaluations?","execution_kind":"owlrl-sparql","inference":"owlrl","query":"queries/cq14-honesty-evaluations.rq"},
+    {"id":"CQ-15","concern":"honesty-and-communication","question":"Which records include a paired honesty–communication assessment?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/example/a2-4-communicative-honesty.rq"},
+    {"id":"CQ-16","concern":"honesty-and-communication","question":"Which communication content entities occur as assessed subjects?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq16-assessed-communication-content.rq"},
+    {"id":"CQ-17","concern":"honesty-and-communication","question":"How are material and functional honesty distinguished?","execution_kind":"schema-structural-review","inference":"asserted","query":"queries/cq17-honesty-facets.rq","review_note":"The exact basis and realization fillers constitute the machine-checkable distinction."},
+    {"id":"CQ-18","concern":"provenance","question":"Which evaluation process produced a record?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq18-producing-processes.rq"},
+    {"id":"CQ-19","concern":"provenance","question":"Which agent carried out an evaluation process?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq19-evaluation-agents.rq"},
+    {"id":"CQ-20","concern":"provenance","question":"Which information content entities have material-bearer provenance?","execution_kind":"abox-sparql","inference":"asserted","query":"queries/cq20-material-bearers.rq"}
+  ]
+}

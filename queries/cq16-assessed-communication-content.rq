@@ -1,0 +1,11 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?evaluation ?assessment ?content ?contentType WHERE {
+  ?evaluation a gdpo:GDPO0000044 ;
+              gdpo:GDPO0000469 ?assessment .
+  ?assessment gdpo:GDPO0000471 ?content .
+  ?content a ?contentType .
+  ?contentType rdfs:subClassOf* gdpo:GDPO0000446 .
+}
+ORDER BY ?evaluation ?content ?contentType

@@ -1,0 +1,7 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?record ?process WHERE {
+  ?process a gdpo:GDPO0000055 ;
+           gdpo:GDPO0000463 ?record .
+}
+ORDER BY ?record ?process

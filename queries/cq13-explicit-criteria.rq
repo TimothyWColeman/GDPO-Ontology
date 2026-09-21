@@ -1,0 +1,7 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?evaluation ?principle WHERE {
+  ?evaluation a gdpo:GDPO0000044 ;
+              gdpo:GDPO0000046 ?principle .
+}
+ORDER BY ?evaluation ?principle

@@ -1,0 +1,10 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?evaluation ?score ?principle ?value ?scale WHERE {
+  ?evaluation a gdpo:GDPO0000044 ;
+              gdpo:GDPO0000457 ?score .
+  ?score gdpo:GDPO0000458 ?principle ;
+         gdpo:GDPO0000459 ?value ;
+         gdpo:GDPO0000460 ?scale .
+}
+ORDER BY ?evaluation ?principle

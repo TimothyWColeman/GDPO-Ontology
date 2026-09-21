@@ -1,0 +1,7 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?process ?agent WHERE {
+  ?process a gdpo:GDPO0000055 ;
+           gdpo:GDPO0000051 ?agent .
+}
+ORDER BY ?process ?agent

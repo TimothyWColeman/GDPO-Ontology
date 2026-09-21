@@ -1,0 +1,7 @@
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?evaluation ?artifact WHERE {
+  ?evaluation a gdpo:GDPO0000455 ;
+              gdpo:GDPO0000045 ?artifact .
+}
+ORDER BY ?evaluation

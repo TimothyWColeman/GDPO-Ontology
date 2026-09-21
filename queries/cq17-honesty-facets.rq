@@ -1,0 +1,27 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX bfo: <http://purl.obolibrary.org/obo/>
+PREFIX gdpo: <https://www.ramsprinciplesofgooddesign.com/>
+
+SELECT DISTINCT ?facet ?basisClass ?realizingProcessClass WHERE {
+  VALUES ?facet { gdpo:GDPO0000041 gdpo:GDPO0000042 }
+  ?facet rdfs:subClassOf ?basisRestriction, ?processRestriction .
+  ?basisRestriction a owl:Restriction ;
+                    owl:onProperty bfo:BFO_0000218 ;
+                    owl:someValuesFrom ?basisClass .
+  {
+    ?processRestriction a owl:Restriction ;
+                        owl:onProperty bfo:BFO_0000054 ;
+                        owl:allValuesFrom ?realizingProcessClass .
+    FILTER(isIRI(?realizingProcessClass))
+  }
+  UNION
+  {
+    ?processRestriction a owl:Restriction ;
+                        owl:onProperty bfo:BFO_0000054 ;
+                        owl:allValuesFrom ?processExpression .
+    ?processExpression owl:unionOf/rdf:rest*/rdf:first ?realizingProcessClass .
+  }
+}
+ORDER BY ?facet ?realizingProcessClass
