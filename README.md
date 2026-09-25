@@ -37,8 +37,12 @@ artifacts, evaluation processes, temporal context, and scores.
 - [`shapes/`](shapes/) contains SHACL conformance shapes.
 - [`validation/`](validation/) contains executable structural, SHACL, query,
   and OWL-DL checks.
-- [`docs/`](docs/) explains the model, competency questions, imports,
-  reproducibility, validation, and governance.
+- [`docs/`](docs/) provides the [overview](docs/overview.md),
+  [architecture](docs/architecture.md), [Rams-principles mapping](docs/rams-principles-mapping.md),
+  [competency questions](docs/competency-questions.md), [manuscript-evidence
+  crosswalk](docs/manuscript-evidence.md), imports, reproducibility,
+  [validation](docs/validation.md), [recorded validation results](docs/validation-results-v1.0.0.md),
+  and governance.
 
 ## Quick start
 
@@ -78,6 +82,21 @@ not establish that pairing.
 
 See [`docs/modeling-patterns.md`](docs/modeling-patterns.md) for the full
 pattern descriptions.
+
+## Manuscript support
+
+The public release is the evidence companion for the GDPO manuscript. It keeps
+the paper, authoring history, and private development records out of the public
+repository while making the ontology and its inspectable evidence available.
+
+- [`docs/manuscript-evidence.md`](docs/manuscript-evidence.md) maps the paper's
+  modeling and validation claims to public files.
+- [`docs/figures/gdpo-normative-evaluative-spine.svg`](docs/figures/gdpo-normative-evaluative-spine.svg)
+  is the accessible vector form of the reusable-pattern figure; its Mermaid
+  source and PNG rendering are alongside it.
+- [`docs/rams-principles-mapping.md`](docs/rams-principles-mapping.md) provides
+  a readable mapping from the ten principle categories to their targets and
+  prescribed process types.
 
 ## Reproducibility and citation
 

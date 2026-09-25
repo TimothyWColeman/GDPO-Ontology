@@ -64,7 +64,7 @@ def release_files() -> list[Path]:
     if missing:
         raise FileNotFoundError("required public release inputs are missing: " + ", ".join(missing))
     paths = set(required)
-    paths.update(files_under("docs", {".md", ".svg"}))
+    paths.update(files_under("docs", {".md", ".mmd", ".png", ".svg"}))
     paths.update(files_under("examples", {".md", ".ttl"}))
     paths.update(files_under("imports", {".md", ".json", ".owl", ".ttl"}))
     paths.update(files_under("queries", {".md", ".json", ".rq"}))

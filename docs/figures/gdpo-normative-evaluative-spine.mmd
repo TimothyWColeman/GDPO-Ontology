@@ -1,0 +1,106 @@
+%% Mermaid CLI 11.16.0 source for the public GDPO pattern figure.
+%% The committed SVG and PNG are the public renderings for v1.0.0.
+
+%%{init: {
+  "theme": "base",
+  "look": "classic",
+  "fontFamily": "Arial, Helvetica, sans-serif",
+  "htmlLabels": false,
+  "deterministicIds": true,
+  "deterministicIDSeed": "gdpo-figure-1-rev12-public-v1",
+  "handDrawnSeed": 41,
+  "wrappingWidth": 320,
+  "themeCSS": ".label text, .edgeLabel text, .cluster-label text { font-family: Arial, Helvetica, sans-serif !important; } .edgeLabel text { font-size: 24px !important; } .edgeLabel rect { fill: #ffffff !important; opacity: 1 !important; stroke: none !important; } .cluster-label text { font-size: 32px !important; font-weight: 700 !important; } .flowchart-link { stroke-width: 3px !important; }",
+  "themeVariables": {
+    "background": "#ffffff",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontSize": "28px",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#111111",
+    "primaryBorderColor": "#333333",
+    "secondaryColor": "#f4f4f4",
+    "tertiaryColor": "#ffffff",
+    "lineColor": "#333333",
+    "clusterBkg": "#f7f7f7",
+    "clusterBorder": "#666666",
+    "edgeLabelBackground": "#ffffff"
+  },
+  "flowchart": {
+    "useMaxWidth": false,
+    "curve": "linear",
+    "nodeSpacing": 36,
+    "rankSpacing": 56,
+    "diagramPadding": 18,
+    "subGraphTitleMargin": {
+      "top": 8,
+      "bottom": 20
+    }
+  }
+}}%%
+flowchart TB
+    accTitle: Three reusable GDPO design patterns
+    accDescr: Four vertically stacked panels show the prescription-component pattern, criterion-method relevance, criterion-subject assessment pattern, and a notation key. Rectangular nodes denote classes or class expressions. Rounded nodes denote named individuals. Solid arrows denote asserted relations, OWL restrictions, or subclass axioms. Dotted arrows denote inferences. In the third panel, individual A1 is one assessment component that jointly identifies individual H1, an honesty statement, and individual U1, SK4 user-manual content. Its parent individual E2 is inferred to instantiate the communicative-honesty evaluation class.
+
+    subgraph prescriptionPattern ["A. Prescription-component pattern"]
+        direction LR
+        principleClass["Rams principle category [class]"]
+        targetExpression["Artifact-side target [class expression]"]
+        componentExpression["Prescription component [class]"]
+        processExpression["Prescribed process [class expression]"]
+
+        principleClass -->|"aims at target only"| targetExpression
+        principleClass -->|"has component some"| componentExpression
+        componentExpression -->|"prescribes only"| processExpression
+    end
+
+    subgraph relevancePattern ["B. Criterion–method relevance pattern"]
+        direction LR
+        evaluationRecord(["E1: SK4 durability evaluation"])
+        selectedStatement(["C1: durability statement"])
+        methodSpec(["M1: durability rubric"])
+        methodPrinciple(["P1: environmental<br/>friendliness statement"])
+
+        evaluationRecord -->|"against principle"| selectedStatement
+        evaluationRecord -->|"is about using method"| methodSpec
+        methodSpec -->|"operationalizes principle"| methodPrinciple
+        evaluationRecord -.->|"inferred relevant principle"| methodPrinciple
+    end
+
+    subgraph subjectPattern ["C. Criterion-subject assessment pattern"]
+        direction LR
+        subjectRecord(["E2: SK4 manual-honesty evaluation"])
+        assessmentComponent(["A1: assessment component (one criterion + one subject)"])
+        honestyStatement(["H1: honesty statement"])
+        communicationContent(["U1: SK4 user-manual content"])
+        communicativeClass["Communicative honesty evaluation [class]"]
+        honestyClass["Honesty evaluation [class]"]
+
+        subjectRecord -->|"has assessment<br/>component"| assessmentComponent
+        assessmentComponent -->|"has assessment<br/>criterion"| honestyStatement
+        assessmentComponent -->|"has assessed<br/>subject"| communicationContent
+        subjectRecord -.->|"inferred rdf:type"| communicativeClass
+        communicativeClass -->|"subclass of"| honestyClass
+    end
+
+    subgraph notationKey ["D. Notation key"]
+        direction LR
+        keyClass["Rectangle: class or class expression"]
+        keyIndividual(["Rounded node: named individual"])
+
+        keyClass -->|"solid"| keyIndividual
+        keyIndividual -.->|"dotted"| keyClass
+    end
+
+    %% Layout-only invisible links keep the three patterns stacked A to C.
+    processExpression ~~~ evaluationRecord
+    methodPrinciple ~~~ subjectRecord
+    honestyClass ~~~ keyClass
+
+    classDef patternNode fill:#ffffff,stroke:#222222,stroke-width:3px,color:#111111
+
+    class principleClass,targetExpression,componentExpression,processExpression,evaluationRecord,selectedStatement,methodSpec,methodPrinciple,subjectRecord,assessmentComponent,honestyStatement,communicationContent,communicativeClass,honestyClass,keyClass,keyIndividual patternNode
+
+    style prescriptionPattern fill:#f7f7f7,stroke:#666666,stroke-width:2px,color:#111111
+    style relevancePattern fill:#f7f7f7,stroke:#666666,stroke-width:2px,color:#111111
+    style subjectPattern fill:#f7f7f7,stroke:#666666,stroke-width:2px,color:#111111
+    style notationKey fill:#f7f7f7,stroke:#666666,stroke-width:2px,color:#111111
