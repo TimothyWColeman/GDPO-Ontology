@@ -98,6 +98,59 @@ repository while making the ontology and its inspectable evidence available.
   a readable mapping from the ten principle categories to their targets and
   prescribed process types.
 
+### Reusable modeling-pattern figure
+
+<p align="center">
+  <img src="docs/figures/gdpo-normative-evaluative-spine.png" alt="Three reusable GDPO patterns: prescription components, criterion-method relevance, and criterion-subject assessment" width="900">
+</p>
+
+The [SVG](docs/figures/gdpo-normative-evaluative-spine.svg),
+[Mermaid source](docs/figures/gdpo-normative-evaluative-spine.mmd), and
+[accessible explanation](docs/manuscript-evidence.md#reusable-pattern-figure)
+are also available.
+
+### Semantic architecture
+
+<p align="center">
+  <img src="docs/img/gdpo-architecture.svg" alt="GDPO semantic architecture" width="900">
+</p>
+
+See the [architecture page](docs/architecture.md) for an explanation of the
+relations shown.
+
+## Competency questions
+
+GDPO provides twenty executable competency-question contracts. Each has a
+query or structural check and an exact expected-result contract; run them with
+`python3 validation/validate_queries.py`.
+
+| ID | Question |
+|---|---|
+| CQ-01 | Which target class expressions are associated with each principle? |
+| CQ-02 | Which process types constrain each principle's prescriptions? |
+| CQ-03 | Which lifecycle-stage process types constrain intended applicability? |
+| CQ-04 | Which principles occur in the Rams ten-principles specification? |
+| CQ-05 | How are principles distinguished from their artifact-side targets? |
+| CQ-06 | What artifacts have been evaluated? |
+| CQ-07 | Which criterion was an artifact evaluated against? |
+| CQ-08 | During which temporal region was an evaluation assessed? |
+| CQ-09 | Which method specification was used? |
+| CQ-10 | What scores and scales are associated with an evaluation? |
+| CQ-11 | Which methods operationalize which principles? |
+| CQ-12 | Which principles are relevant because of method use? |
+| CQ-13 | Which principles were explicitly selected as criteria? |
+| CQ-14 | Which records are honesty evaluations? |
+| CQ-15 | Which records include a paired honesty–communication assessment? |
+| CQ-16 | Which communication content entities occur as assessed subjects? |
+| CQ-17 | How are material and functional honesty distinguished? |
+| CQ-18 | Which evaluation process produced a record? |
+| CQ-19 | Which agent carried out an evaluation process? |
+| CQ-20 | Which information content entities have material-bearer provenance? |
+
+The [complete competency-question page](docs/competency-questions.md) links
+each question to its executable evidence and the
+[machine-readable registry](queries/competency-question-registry.json).
+
 ## Reproducibility and citation
 
 The repository supplies the examples, queries, shapes, and validation tools
